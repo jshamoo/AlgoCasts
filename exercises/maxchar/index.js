@@ -8,11 +8,7 @@
 function maxChar(str) {
   const counter = {};
   for (let char of str) {
-    if (!counter[char]) {
-      counter[char] = 1;
-    } else {
-      counter[char]++;
-    }
+    counter[char] ? counter[char]++ : counter[char] = 1;
   }
   let mostCommon = str[0];
   for (let key in counter) {
