@@ -11,21 +11,26 @@
 function anagrams(stringA, stringB) {
   // anything that's not digit, letter (incl underscore by |_)
   const rx = /[^\w]|_/g;
-  stringA = stringA.toLowerCase().replace(rx, '');
-  stringB = stringB.toLowerCase().replace(rx, '');
-  console.log(stringA, stringB);
-  if (stringA.length !== stringB.length) { return false; }
-  for (let char of stringA) {
-    let index = stringB.indexOf(char);
-    if (index === -1) {
-      return false;
-    } else {
-      stringB = stringB.slice(0, index) + stringB.slice(index + 1);
-    }
-  }
-  return true;
+  return stringA.toLowerCase().replace(rx, '').split('').sort().join('') === stringB.toLowerCase().replace(rx, '').split('').sort().join('');
 }
 // anagrams('RAIL!_ SAFETY!', 'fairy tales')
 
 
 module.exports = anagrams;
+
+// function anagrams(stringA, stringB) {
+//   // anything that's not digit, letter (incl underscore by |_)
+//   const rx = /[^\w]|_/g;
+//   stringA = stringA.toLowerCase().replace(rx, '');
+//   stringB = stringB.toLowerCase().replace(rx, '');
+//   if (stringA.length !== stringB.length) { return false; }
+//   for (let char of stringA) {
+//     let index = stringB.indexOf(char);
+//     if (index === -1) {
+//       return false;
+//     } else {
+//       stringB = stringB.slice(0, index) + stringB.slice(index + 1);
+//     }
+//   }
+//   return true;
+// }
