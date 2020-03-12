@@ -28,25 +28,28 @@ function matrix(n) {
     let row = start;
     while(col <= end){
       cube[row][col] = cube[row][col] || num++;
-      if (col === end) row++;
+      // if (col === end) row++;
       col++;
     }
+    row++;
     col--;
     while(row <= end) {
       cube[row][col] = cube[row][col] || num++;
-      if(row === end) col--;
+      // if(row === end) col--;
       row++;
     }
+    col--;
     row--;
     while(col >= start) {
       cube[row][col] = cube[row][col] || num++;
-      if (col === start) row--;
+      // if (col === start) row--;
       col--;
     }
+    row--;
     col++;
     while (row >= start) {
       cube[row][col] = cube[row][col] || num++;
-      if(row === start) col++;
+      // if(row === start) col++;
       row--;
     }
     start = start + 1;
