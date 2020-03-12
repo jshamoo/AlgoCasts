@@ -18,7 +18,7 @@
 function matrix(n) {
   const cube = [];
   for (let i = 0; i < n; i++) {
-    cube.push(Array(n));
+    cube.push([]);
   }
   let start = 0;
   let end = n - 1;
