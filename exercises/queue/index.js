@@ -8,6 +8,25 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+class Queue {
+  constructor() {
+    this._storage = {};
+    this.index = 0;
+  }
+
+  add(value) {
+    this._storage[this.index] = value;
+    this.index++;
+  }
+
+  remove() {
+    const removedIndex = Math.min(...Object.keys(this._storage));
+    const removedValue = this._storage[removedIndex];
+    delete this._storage[removedIndex];
+    return removedValue;
+  }
+}
+
+// can also implement it using Array native methods
 
 module.exports = Queue;
